@@ -7,7 +7,7 @@ class HigherAmount:
         self.conn = None
         self.db_cursor = None
 
-    def execute_query(self):
+    def report(self):
         self.conn = self.mysql.connection
         self.db_cursor = self.conn.cursor()
 
