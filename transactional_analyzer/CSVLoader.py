@@ -18,12 +18,13 @@ class CSVLoader:
 
         with open(self.file_path, 'r', newline='') as csvfile:
             csv_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+            next(csv_reader)
             for row in csv_reader:
                 query = (
                     "INSERT INTO transactionals_data "
                     "(transaction_id, merchant_id, user_id, "
-                    "card_number, transaction_date, transaction_amount, "
-                    "device_id, has_cbk) "
+                    "card_number, transaction_date, "
+                    "transaction_amount, device_id, has_cbk) "
                     "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
                 )
                 self.db_cursor.execute(
