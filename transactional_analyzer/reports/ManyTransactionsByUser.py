@@ -1,4 +1,4 @@
-from transactional_analyzer.database.MySQLConnector import MySQLConnector
+from database.MySQLConnector import MySQLConnector
 
 
 class ManyTransactionsByUser:
@@ -23,7 +23,16 @@ class ManyTransactionsByUser:
 
         self.db_cursor.execute(query)
         results = self.db_cursor.fetchall()
-        # retorna uma lista de tuplas
+
+        for user_id, total_transactions, total_amount in results:
+            print(
+                f'Id da transação: {user_id}, '
+                f'Total de Transações: {total_transactions}, '
+                f'Valor Total: R$ {total_amount}'
+            )
 
         self.db_cursor.close()
-        return results
+
+
+if __name__ == '__main__':
+    ManyTransactionsByUser().report()
