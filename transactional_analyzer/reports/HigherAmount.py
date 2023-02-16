@@ -1,4 +1,4 @@
-from transactional_analyzer.database.MySQLConnector import MySQLConnector
+from database.MySQLConnector import MySQLConnector
 
 
 class HigherAmount:
@@ -25,7 +25,15 @@ class HigherAmount:
 
         self.db_cursor.execute(query)
         results = self.db_cursor.fetchall()
-        # retorna uma lista de tuplas
+
+        for transaction_id, user_id, transaction_amount, has_cbk in results:
+            print(
+                f'Id da transação: {transaction_id}, Id do Usuário: {user_id},'
+                f' Valor: R$ {transaction_amount}, Houve Chargeback? {has_cbk}'
+            )
 
         self.db_cursor.close()
-        return results
+
+
+if __name__ == '__main__':
+    HigherAmount().report()
