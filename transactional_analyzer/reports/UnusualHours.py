@@ -12,7 +12,7 @@ class UnusualHours:
         self.conn = self.mysql.connection
         self.db_cursor = self.conn.cursor()
 
-        results = make_report(self)
+        results = make_report(self.db_cursor)
         save_report(results)
         print_report(results)
 
