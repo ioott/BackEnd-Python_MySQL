@@ -88,7 +88,13 @@ Ao escolher uma opção, o relatório correspondente será impresso em tela e ex
 * Utilizar a biblioteca Pandas para melhorar a apresentação do dados
   
 #
-  
+
+<br/>
+
+[Gravação de tela de 17-02-2023 16:19:38.webm](https://user-images.githubusercontent.com/98191041/219767707-288e7bf4-91d5-4789-a62e-1b715149679a.webm)
+
+#
+
 Este sistema foi desenvolvido por Vania Ioott.<br/>
 Encontrou algum erro? Tem alguma sugestão? Faça contato! <br/>
 
