@@ -1,4 +1,5 @@
 from database.MySQLConnector import MySQLConnector
+from utils.export_csv import export_csv
 
 
 class ManyTransactionsByUser:
@@ -11,7 +12,16 @@ class ManyTransactionsByUser:
         self.conn = self.mysql.connection
         self.db_cursor = self.conn.cursor()
 
-        query = (
+        results = make_report(self)
+        save_report(results)
+        print_report(results)
+
+        self.db_cursor.close()
+        return results
+
+
+def make_report(db_cursor):
+    query = (
             "SELECT user_id, COUNT(*) AS total_transactions, "
             "SUM(transaction_amount) AS total_amount "
             "FROM transactionals_data "
@@ -21,17 +31,26 @@ class ManyTransactionsByUser:
             "ORDER BY total_amount DESC"
         )
 
-        self.db_cursor.execute(query)
-        results = self.db_cursor.fetchall()
+    db_cursor.execute(query)
+    return db_cursor.fetchall()
 
-        for user_id, total_transactions, total_amount in results:
-            print(
-                f'Id da transação: {user_id}, '
-                f'Total de Transações: {total_transactions}, '
-                f'Valor Total: R$ {total_amount}'
-            )
 
-        self.db_cursor.close()
+def print_report(report):
+    print('\n >>> O relatório foi salvo na pasta "exported_reports" <<<\n')
+
+    for user_id, total_transactions, total_amount in report:
+        print(
+            f'Id da transação: {user_id}, '
+            f'Total de Transações: {total_transactions}, '
+            f'Valor Total: R$ {total_amount}'
+        )
+
+    print('\n >>> O relatório foi salvo na pasta "exported_reports" <<<\n')
+
+
+def save_report(report):
+    filepath = 'exported_reports/ManyTransactionsByUser.csv'
+    export_csv(filepath, report)
 
 
 if __name__ == '__main__':
