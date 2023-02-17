@@ -3,7 +3,9 @@ from transactional_analyzer.database.MySQLConnector import MySQLConnector
 import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-csv_file_path = os.path.join(current_dir, '..', 'database', 'transactional-sample.csv')
+csv_file_path = os.path.join(
+    current_dir, '..', 'database', 'transactional-sample.csv'
+)
 
 
 class CSVLoader:
