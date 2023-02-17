@@ -8,8 +8,7 @@
   <a href="#tecnologias">Tecnologias</a> •
   <a href="#instalação">Instalação</a> •
   <a href="#utilização">Utilização</a> •
-  <a href="#melhorias-futuras">Melhorias Futuras</a> •
-  <a href="#licença">Licença</a>
+  <a href="#[proximos-passos](https://github.com/ioott/cw#pr%C3%B3ximos-passos)">Próximos Passos</a>
 </p>
 
 ## Sobre
