@@ -8,7 +8,7 @@
   <a href="#tecnologias">Tecnologias</a> •
   <a href="#instalação">Instalação</a> •
   <a href="#utilização">Utilização</a> •
-  <a href="#[proximos-passos](https://github.com/ioott/cw#pr%C3%B3ximos-passos)">Próximos Passos</a>
+  <a href="#pr%C3%B3ximos-passos">Próximos Passos</a>
 </p>
 
 ## Sobre
@@ -90,4 +90,21 @@ Ao escolher uma opção, o relatório correspondente será impresso em tela e ex
 #
   
 Este sistema foi desenvolvido por Vania Ioott.<br/>
-Encontrou algum erro? Tem alguma sugestão? Faça contato!
+Encontrou algum erro? Tem alguma sugestão? Faça contato! <br/>
+
+#
+  
+<div align="center">
+    <p align="center">
+        <a href="https://www.linkedin.com/in/vania-ioott/">
+            <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/LinkedIN.svg" width="50" height="50" />
+        </a>
+        <a href="mailto:vioott@gmail.com">
+            <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/Gmail.svg" width="50" height="50" />
+        </a>
+        <a href="https://wa.me/5521999732102">
+            <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/Color/WhatsApp.svg" width="50" height="50" />
+        </a>
+    </p>
+</div>
+
