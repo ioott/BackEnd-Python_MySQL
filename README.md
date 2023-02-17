@@ -84,7 +84,7 @@ Ao escolher uma opção, o relatório correspondente será impresso em tela e ex
 * Adicionar tratamento de erros
 * Refatorar o código para adaptá-lo ao padrão Strategy, melhorando a legibilidade e organização
 * Implementar testes automatizados para garantir a integridade da aplicação
-* Integraçar com outras fontes de dados além do CSV
+* Integrar com outras fontes de dados além do CSV
 * Utilizar a biblioteca Pandas para melhorar a apresentação do dados
   
 #
