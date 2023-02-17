@@ -76,10 +76,19 @@ O sistema foi desenvolvido utilizando as seguintes tecnologias:
       - Mesmo cartão em dispositivos diferentes
       - Mesmo usuário com muitas transações
   
-Ao escolher uma opção, o relatório correspondente será gerado e exportado em formato CSV para a pasta reports.
+Ao escolher uma opção, o relatório correspondente será impresso em tela e exportado em formato CSV para a pasta exported_reports.
   
 </details>
-  
 
-<br/><br/>
-<h1 align="center">(README EM CONSTRUÇÃO)</h1>
+## Próximos passos
+
+* Adicionar tratamento de erros
+* Refatorar o código para adaptá-lo ao padrão Strategy, melhorando a legibilidade e organização
+* Implementar testes automatizados para garantir a integridade da aplicação
+* Integraçar com outras fontes de dados além do CSV
+* Utilizar a biblioteca Pandas para melhorar a apresentação do dados
+  
+#
+  
+Este sistema foi desenvolvido por Vania Ioott.<br/>
+Encontrou algum erro? Tem alguma sugestão? Faça contato!
