@@ -16,11 +16,11 @@ class Analyzer:
 
     def make_all_reports(self) -> str:
         all_reports = []
-        all_reports.extend(HigherAmount.make_report(self))
-        all_reports.extend(UnusualHours.make_report(self))
-        all_reports.extend(ShortTime.make_report(self))
-        all_reports.extend(ManyDevicesByCard.make_report(self))
-        all_reports.extend(ManyTransactionsByUser.make_report(self))
+        all_reports.extend(HigherAmount.make_report(self.db_cursor))
+        all_reports.extend(UnusualHours.make_report(self.db_cursor))
+        all_reports.extend(ShortTime.make_report(self.db_cursor))
+        all_reports.extend(ManyDevicesByCard.make_report(self.db_cursor))
+        all_reports.extend(ManyTransactionsByUser.make_report(self.db_cursor))
         return all_reports
 
     def user_analyzer(user_id):
