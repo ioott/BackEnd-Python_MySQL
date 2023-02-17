@@ -1,3 +1,4 @@
+from Analyzer import Analyzer
 from reports import (
     HigherAmount,
     UnusualHours,
@@ -8,14 +9,23 @@ from reports import (
 
 
 def main():
-    while (True):
-        print('Escolha o relatório de transações com chargeback desejado:')
+    print('\n Selecione:\n')
+    print('1 - Consulta')
+    print('2 - Relatório\n')
+
+    first_option = int(input("Opção: "))
+
+    if first_option == 1:
+        user_id = int(input('\n Digite o id que deseja consultar: '))
+        Analyzer.user_analyzer(user_id)
+
+    elif first_option == 2:
+        print('\n Escolha o relatório desejado:\n ')
         print('1 - Valores altos')
         print('2 - Ocorridas entre 00:00h e 05:59h')
         print('3 - Mesmo usuário em um curto espaço de tempo')
         print('4 - Mesmo cartão em dispositivos diferentes')
-        print('5 - Mesmo usuário com muitas transações')
-        print('6 - Sair')
+        print('5 - Mesmo usuário com muitas transações\n ')
 
         option = int(input("Opção: "))
 
@@ -25,18 +35,23 @@ def main():
             3: ShortTime.ShortTime().report,
             4: ManyDevicesByCard.ManyDevicesByCard().report,
             5: ManyTransactionsByUser.ManyTransactionsByUser().report,
-            6: encerrar,
         }
 
         def switch(option):
-            return switcher.get(option, 0)()
+            if option >= 1 and option <= 5:
+                return switcher.get(option)()
+            else:
+                encerrar()
 
         switch(option)
 
+    else:
+        encerrar()
+
 
 def encerrar():
-    print('Encerrado')
-    exit()
+    print('\n Opção inválida. Digite novamente')
+    main()
 
 
 if __name__ == '__main__':
