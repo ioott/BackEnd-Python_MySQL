@@ -7,6 +7,12 @@ csv_file_path = os.path.join(
     current_dir, '..', 'database', 'transactional-sample.csv'
 )
 
+""" os.path.abspath(__file__) retorna o caminho absoluto para o arquivo em que
+o código está sendo executado atualmente. Esse caminho é passado para
+os.path.dirname(), que retorna o diretório correspondente a esse caminho
+absoluto. Assim podemos garantir que o caminho do arquivo estará correto,
+independente do diretório em que o script estiver sendo executado. """
+
 
 class CSVLoader:
     def __init__(self):
