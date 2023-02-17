@@ -43,10 +43,10 @@ O sistema foi desenvolvido utilizando as seguintes tecnologias:
 ## Utilização
 <details>
   <summary> Para utilizar o sistema </summary> <br/>
-  1 - Clone o repositório em sua máquina: <code> git@github.com:ioott/cw.git </code> <br/>
-  2 - Acesse o diretório do sistema: <code> cd cw.git </code> <br/>
-  3 - Crie um ambiente virtual e ative: <code> python3 -m venv .venv && source .venv/bin/activate </code> <br/>
-  4 - Instale as dependências do sistema: <code> python3 -m pip install -r dev-requirements.txt </code> <br/>
+  1 - Clone o repositório em sua máquina: <code> git@github.com:ioott/cw.git </code> <br/><br/>
+  2 - Acesse o diretório do sistema: <code> cd cw.git </code> <br/><br/>
+  3 - Crie um ambiente virtual e ative: <code> python3 -m venv .venv && source .venv/bin/activate </code> <br/><br/>
+  4 - Instale as dependências do sistema: <code> python3 -m pip install -r dev-requirements.txt </code> <br/><br/>
   5 - Crie um arquivo <code> .env </code> na raiz e coloque as variáveis de configuração do banco de dados:
 
   ```
@@ -55,17 +55,29 @@ O sistema foi desenvolvido utilizando as seguintes tecnologias:
   DB_PASSWORD=<senha do usuário do banco de dados>
   DB_NAME=<nome do banco de dados>
   ```
-  6 - Crie a estrutura do banco de dados: <code> mysql -u root -p < create_database.sql </code> <br/>
-  7 - Quando solicitado, insira sua senha <br/>
-  8 - Popule o banco: <code> python3 CSVLoader.py </code> <br/>
-  9 - Execute a aplicação com <code> python3 CSVLoader.py </code> <br/>
+  6 - Crie o banco de dados no MySQL. Para isso, execute o comando <code> mysql -u <username> -p < create_database.sql </code> no terminal, substituindo <username> pelo seu nome de usuário do MySQL e inserindo a senha quando solicitado <br/><br/>
+  7 - Popule o banco: <code> python3 utils/CSVLoader.py </code> <br/><br/>
+  8 - Execute a aplicação com <code> python3 CSVLoader.py </code> <br/>
   </details>
   
 <details>
-  <summary> Funcionalidades </summary> <br/>
-   * Consulta de transações por ID de usuário: o sistema irá verificar se o user_id informado consta em algum dos relatórios, e informará se é suspeito ou não.
-   * Relatórios: o sistema gera relatórios com informações relevantes sobre as transações analisadas. 
-      - Os relatórios disponíveis são:
+  <summary> Funcionalidades </summary>
+  
+* Consulta de transações por ID de usuário: <br/>
+      O sistema irá verificar se o user_id informado consta em algum dos relatórios, e informará se é suspeito ou não.<br/>
+  
+* Relatórios: 
+      O sistema gera relatórios com informações relevantes sobre as transações analisadas. <br/>
+      Os relatórios disponíveis são:<br/>
+  
+      - Valores altos
+      - Ocorridas entre 00:00h e 05:59h
+      - Mesmo usuário em um curto espaço de tempo
+      - Mesmo cartão em dispositivos diferentes
+      - Mesmo usuário com muitas transações
+  
+Ao escolher uma opção, o relatório correspondente será gerado e exportado em formato CSV para a pasta reports.
+  
 </details>
   
 
