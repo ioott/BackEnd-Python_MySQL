@@ -1,14 +1,15 @@
 import csv
 from transactional_analyzer.database.MySQLConnector import MySQLConnector
+import os
 
-file_path = "transactional_analyzer/database/transactional-sample.csv"
-mysql = MySQLConnector()
+current_dir = os.path.dirname(os.path.abspath(__file__))
+csv_file_path = os.path.join(current_dir, '..', 'database', 'transactional-sample.csv')
 
 
 class CSVLoader:
     def __init__(self):
-        self.file_path = file_path
-        self.mysql = mysql
+        self.file_path = csv_file_path
+        self.mysql = MySQLConnector()
         self.conn = None
         self.db_cursor = None
 
@@ -42,7 +43,7 @@ class CSVLoader:
                 )
 
         self.conn.commit()
-        self.cursor.close()
+        self.db_cursor.close()
 
 
 CSVLoader().load_data()
