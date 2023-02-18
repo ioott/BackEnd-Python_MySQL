@@ -54,9 +54,9 @@ O sistema foi desenvolvido utilizando as seguintes tecnologias:
   DB_PASSWORD=<senha do usuário do banco de dados>
   DB_NAME=<nome do banco de dados>
   ```
-  6 - Crie o banco de dados no MySQL. Para isso, execute o comando <code> mysql -u <username> -p < create_database.sql </code> no terminal, substituindo <username> pelo seu nome de usuário do MySQL e inserindo a senha quando solicitado <br/><br/>
+  6 - Crie o banco de dados no MySQL. Para isso, execute o comando <code> mysql -u username -p < create_database.sql </code> no terminal, substituindo username pelo seu nome de usuário do MySQL e inserindo a senha quando solicitado <br/><br/>
   7 - Popule o banco: <code> python3 utils/CSVLoader.py </code> <br/><br/>
-  8 - Execute a aplicação com <code> python3 CSVLoader.py </code> <br/>
+  8 - Execute a aplicação com <code> python3 main.py </code> <br/>
   </details>
   
 <details>
@@ -66,7 +66,7 @@ O sistema foi desenvolvido utilizando as seguintes tecnologias:
       O sistema irá verificar se o user_id informado consta em algum dos relatórios, e informará se é suspeito ou não.<br/>
   
 * Relatórios: 
-      O sistema gera relatórios com informações relevantes sobre as transações analisadas. <br/>
+      O sistema gera relatórios com informações relevantes sobre as transações que tiveram chargeback. <br/>
       Os relatórios disponíveis são:<br/>
   
       - Valores altos
@@ -85,7 +85,7 @@ Ao escolher uma opção, o relatório correspondente será impresso em tela e ex
 * Refatorar o código para adaptá-lo ao padrão Strategy, melhorando a legibilidade e organização
 * Implementar testes automatizados para garantir a integridade da aplicação
 * Integrar com outras fontes de dados além do CSV
-* Utilizar a biblioteca Pandas para melhorar a apresentação do dados
+* Utilizar a biblioteca Pandas para melhorar a apresentação dos dados
   
 #
 
