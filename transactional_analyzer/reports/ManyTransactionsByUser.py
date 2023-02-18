@@ -36,16 +36,20 @@ def make_report(db_cursor):
 
 
 def print_report(report):
-    print('\n >>> O relatório foi salvo na pasta "exported_reports" <<<\n')
+    print('\n >>> Este relatório mostra as transações que tiveram chargeback')
+    print('e teve mais de 10 transações por usuário \n')
+    print('>>> Foi salvo na pasta "exported_reports"\n')
 
     for user_id, total_transactions, total_amount in report:
         print(
-            f'Id da transação: {user_id}, '
+            f'Id do usuário: {user_id}, '
             f'Total de Transações: {total_transactions}, '
             f'Valor Total: R$ {total_amount}'
         )
 
-    print('\n >>> O relatório foi salvo na pasta "exported_reports" <<<\n')
+    print('\n >>> Este relatório mostra as transações que tiveram chargeback')
+    print('e teve mais de 10 transações por usuário \n')
+    print('>>> Foi salvo na pasta "exported_reports"\n')
 
 
 def save_report(report):

@@ -34,7 +34,9 @@ def make_report(db_cursor):
 
 
 def print_report(report):
-    print('\n >>> O relatório foi salvo na pasta "exported_reports" <<<\n')
+    print('\n >>> Este relatório mostra as transações que tiveram chargeback')
+    print('e que foram realizadas entre 00:00h e 05:59h \n')
+    print('>>> Foi salvo na pasta "exported_reports"\n')
 
     for (transaction_id, merchant_id, user_id,
             card_number, transaction_date, transaction_amount,
@@ -47,7 +49,9 @@ def print_report(report):
             f'Id do Dispositivo: {device_id}, Houve Chargeback? {has_cbk}'
         )
 
-    print('\n >>> O relatório foi salvo na pasta "exported_reports" <<<\n')
+    print('\n >>> Este relatório mostra as transações que tiveram chargeback')
+    print('e que foram realizadas entre 00:00h e 05:59h \n')
+    print('>>> Foi salvo na pasta "exported_reports"\n')
 
 
 def save_report(report):

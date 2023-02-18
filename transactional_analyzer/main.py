@@ -10,8 +10,8 @@ from reports import (
 
 def main():
     print('\n Selecione:\n')
-    print('1 - Consulta')
-    print('2 - Relatório\n')
+    print('1 - Consulta Usuário Suspeito')
+    print('2 - Relatório de Transações com Chargeback\n')
 
     first_option = int(input("Opção: "))
 
